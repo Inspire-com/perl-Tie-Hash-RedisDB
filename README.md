@@ -1,6 +1,6 @@
 # NAME
 
-Tie::Hash::RedisDB - Blah blah blah
+Tie::Hash::RedisDB - A very thin Tie around a RedisDB Hash
 
 # SYNOPSIS
 
@@ -8,15 +8,15 @@ Tie::Hash::RedisDB - Blah blah blah
 
 # DESCRIPTION
 
-Tie::Hash::RedisDB is
+Tie::Hash::RedisDB is Redis hashes refied into perl hashes.
 
 # AUTHOR
 
-Matt Miller <matt@inspire.com>
+Inspire.com
 
 # COPYRIGHT
 
-Copyright 2018- Matt Miller
+Copyright 2018- Inspire
 
 # LICENSE
 
