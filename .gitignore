@@ -1,0 +1,7 @@
+/Tie-Hash-RedisDB-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
+/.prove
