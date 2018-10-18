@@ -131,7 +131,7 @@ Tie::Hash::RedisDB is Redis hashes refied into perl hashes.
 
 =head1 AUTHOR
 
-Inspire.com
+ClinicaHealth, Inc. dba Inspire
 
 =head1 COPYRIGHT
 

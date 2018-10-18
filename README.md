@@ -16,7 +16,7 @@ Tie::Hash::RedisDB is Redis hashes refied into perl hashes.
 
 # AUTHOR
 
-Inspire.com
+ClinicaHealth, Inc. dba Inspire
 
 # COPYRIGHT
 

@@ -1,7 +1,7 @@
 {
    "abstract" : "A very thin Tie around a RedisDB Hash",
    "author" : [
-      "Inspire.com"
+      "ClinicaHealth, Inc. dba Inspire"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Dist::Milla version v1.0.20, Dist::Zilla version 6.012, CPAN::Meta::Converter version 2.150010",
@@ -62,7 +62,7 @@
          "web" : "https://github.com/Inspire-com/perl-Tie-Hash-RedisDB"
       }
    },
-   "version" : "1.01",
+   "version" : "1.02",
    "x_contributors" : [
       "Matt Miller <matt@inspire.com>"
    ],
