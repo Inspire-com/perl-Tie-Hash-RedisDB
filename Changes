@@ -1,6 +1,7 @@
 Revision history for Tie-Hash-RedisDB
 
 {{$NEXT}}
+       - Improve missing value handling
 
 1.01  2018-10-18 15:37:09 UTC
        - All JSON values, all the time

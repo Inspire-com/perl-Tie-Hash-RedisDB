@@ -2,13 +2,15 @@ package Tie::Hash::RedisDB;
 
 use strict;
 use warnings;
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 use Carp qw(croak);
-use JSON qw(decode_json encode_json);
+use JSON;
 use Scalar::Util qw(reftype);
 use RedisDB;
 use Try::Tiny;
+
+my $json = JSON->new->utf8->allow_nonref;
 
 sub TIEHASH {
     my ($self, $addr, $args) = @_;
@@ -38,7 +40,9 @@ sub TIEHASH {
 sub FETCH {
     my ($self, $key) = @_;
 
-    return decode_json($self->{REDIS}->hget($self->{WHERE}, $key));
+    my $val = $self->{REDIS}->hget($self->{WHERE}, $key);
+
+    return $val && $json->decode($val);
 }
 
 sub STORE {
@@ -46,7 +50,7 @@ sub STORE {
 
     my $redis = $self->{REDIS};
 
-    $redis->hset($self->{WHERE}, $key, encode_json($val));
+    $redis->hset($self->{WHERE}, $key, $json->encode($val));
     if (my $expiry = $self->{EXP_SECONDS}) {
         $redis->expire($self->{WHERE}, $expiry);
     }
