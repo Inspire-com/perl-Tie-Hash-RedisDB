@@ -2,7 +2,7 @@ package Tie::Hash::RedisDB;
 
 use strict;
 use warnings;
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 use Carp qw(croak);
 use JSON qw(decode_json encode_json);
@@ -38,24 +38,19 @@ sub TIEHASH {
 sub FETCH {
     my ($self, $key) = @_;
 
-    my $rval = $self->{REDIS}->hget($self->{WHERE}, $key);
-
-    return try { decode_json($rval) } catch { $rval }
+    return decode_json($self->{REDIS}->hget($self->{WHERE}, $key));
 }
 
 sub STORE {
     my ($self, $key, $val) = @_;
 
-    if (reftype($val)) {
-        $val = try { encode_json($val) } catch { $val };
-    }
-
     my $redis = $self->{REDIS};
 
-    $redis->hset($self->{WHERE}, $key, $val);
+    $redis->hset($self->{WHERE}, $key, encode_json($val));
     if (my $expiry = $self->{EXP_SECONDS}) {
         $redis->expire($self->{WHERE}, $expiry);
     }
+
     return 1;
 }
 
@@ -121,6 +116,10 @@ Tie::Hash::RedisDB - A very thin Tie around a RedisDB Hash
 =head1 SYNOPSIS
 
   use Tie::Hash::RedisDB;
+  my $redis_key = 'scrub';
+  my %bucket;
+  tie %bucket, 'Tie::Hash::RedisDB', $redis_key,
+   { expiry => 60, namespace => 'buckets', redis_uri => 'redis://localhost'};
 
 =head1 DESCRIPTION
 

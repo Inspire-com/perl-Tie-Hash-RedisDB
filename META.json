@@ -62,7 +62,7 @@
          "web" : "https://github.com/Inspire-com/perl-Tie-Hash-RedisDB"
       }
    },
-   "version" : "1.00",
+   "version" : "1.01",
    "x_contributors" : [
       "Matt Miller <matt@inspire.com>"
    ],
