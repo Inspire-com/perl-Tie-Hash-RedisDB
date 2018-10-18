@@ -1,6 +1,8 @@
 Revision history for Tie-Hash-RedisDB
 
 {{$NEXT}}
+
+1.02  2018-10-18 18:05:20 UTC
        - Improve missing value handling
 
 1.01  2018-10-18 15:37:09 UTC
