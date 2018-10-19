@@ -1,6 +1,8 @@
 Revision history for Tie-Hash-RedisDB
 
 {{$NEXT}}
+
+1.03  2018-10-19 12:32:54 UTC
         - Improve test correctness, thanks to @manwar's github contribution
 
 1.02  2018-10-18 18:05:20 UTC
