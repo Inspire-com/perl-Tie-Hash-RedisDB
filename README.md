@@ -4,11 +4,13 @@ Tie::Hash::RedisDB - A very thin Tie around a RedisDB Hash
 
 # SYNOPSIS
 
-    use Tie::Hash::RedisDB;
-    my $redis_key = 'scrub';
-    my %bucket;
-    tie %bucket, 'Tie::Hash::RedisDB', $redis_key,
-     { expiry => 60, namespace => 'buckets', redis_uri => 'redis://localhost'};
+```perl
+use Tie::Hash::RedisDB;
+my $redis_key = 'scrub';
+my %bucket;
+tie %bucket, 'Tie::Hash::RedisDB', $redis_key,
+  { expiry => 60, namespace => 'buckets', redis_uri => 'redis://localhost'};
+```
 
 # DESCRIPTION
 
