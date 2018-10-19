@@ -1,6 +1,7 @@
 Revision history for Tie-Hash-RedisDB
 
 {{$NEXT}}
+        - Improve test correctness, thanks to @manwar's github contribution
 
 1.02  2018-10-18 18:05:20 UTC
        - Improve missing value handling

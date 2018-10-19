@@ -46,7 +46,7 @@
       "test" : {
          "requires" : {
             "Test::Most" : "0.34",
-            "Test::RedisDB" : "0"
+            "Test::RedisDB" : "2.49"
          }
       }
    },
@@ -62,9 +62,10 @@
          "web" : "https://github.com/Inspire-com/perl-Tie-Hash-RedisDB"
       }
    },
-   "version" : "1.02",
+   "version" : "1.03",
    "x_contributors" : [
-      "Matt Miller <matt@inspire.com>"
+      "Matt Miller <matt@inspire.com>",
+      "Mohammad S Anwar <mohammad.anwar@yahoo.com>"
    ],
    "x_generated_by_perl" : "v5.26.1",
    "x_serialization_backend" : "JSON::XS version 3.04",
